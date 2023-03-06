@@ -13,7 +13,7 @@ def encode(to_encode):
     output = ""
     for char in str(to_encode):
         temp = int(char) + 3
-        output += str(temp)
+        output += str(temp % 10)
     return int(output)
 
 
