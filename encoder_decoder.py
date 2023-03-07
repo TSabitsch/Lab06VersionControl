@@ -29,7 +29,6 @@ def main():
     while True:
         user_input = print_menu()
         if user_input == 1:
-            global encoded
             encoded = encode(input("Please enter your password to encode: "))
             print("Your password has been encoded and stored!")
         elif user_input == 2:
