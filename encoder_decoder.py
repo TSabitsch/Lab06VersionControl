@@ -17,22 +17,28 @@ def encode(to_encode):
     return int(output)
 
 
-def decode():
-    return 123
+def decode(encoded):
+    decoded = ""
+    for char in str(encoded):
+        decoded += str((int(char) - 3) % 10)
+
+    return decoded
 
 
 def main():
     while True:
-        encoded = 000000000
         user_input = print_menu()
         if user_input == 1:
             global encoded
             encoded = encode(input("Please enter your password to encode: "))
             print("Your password has been encoded and stored!")
         elif user_input == 2:
-            decoded = decode()
+            decoded = decode(encoded)
             print(f"The encoded password is {encoded}, and the original password is {decoded}")
         elif user_input == 3:
             break
         else:
             print("Error, please enter an input of 1, 2, or 3")
+
+
+main()
